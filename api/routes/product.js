@@ -7,35 +7,40 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/:productID', (req, res, next) => {
-    const ID = req.params.productID;
-    if (ID === 'special') {
+router.get('/:productId', (req, res, next) => {
+    const Id = req.params.productId;
+    if (Id === 'special') {
         res.status(200).json({
-            message: 'You discovered the special ID',
-            ID: ID
+            message: 'You discovered the special Id',
+            Id: Id
         });
     }
     else
     {
         res.status(200).json({
-            message: 'You passed an ID'
+            message: 'You passed an Id'
         });
     }
 });
 
 router.post('/', (req, res, next) => {
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    };
     res.status(201).json({
-        message: 'Handling POST requests to /products'
+        message: 'Handling POST requests to /products',
+        createdProduct: product
     });
 });
 
-router.patch('/:productID', (req, res, next) => {
+router.patch('/:productId', (req, res, next) => {
         res.status(200).json({
             message: 'Updated product!'
         });
 });
 
-router.delete('/:productID', (req, res, next) => {
+router.delete('/:productId', (req, res, next) => {
     res.status(200).json({
         message: 'Deleted product!'
     });
