@@ -1,11 +1,20 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 
 const productRoute = require('./api/routes/product');
 const orderRoute = require('./api/routes/order');
+
+/*
+mongoose.connect('mongodb+srv://admin:'+process.env.MONGO_ATLAS_PASSWORD+'@cluster0.8zhzm.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+    useMongoClient: true
+});
+*/
+
+mongoose.connect('mongodb+srv://admin:hjrrmgwg@cluster0.8zhzm.mongodb.net/<dbname>?retryWrites=true&w=majority');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));

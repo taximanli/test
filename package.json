@@ -1,8 +1,8 @@
 {
-  "name": "test",
+  "name": "node-rest-shop",
   "version": "1.0.0",
-  "description": "Test Node.js",
-  "main": "index.js",
+  "description": "Node Rest Shop",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -20,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "mongoose": "^5.11.7",
     "morgan": "^1.10.0"
   }
 }
